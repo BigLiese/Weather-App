@@ -15,7 +15,7 @@ const HourlyForecast = ({ city }) => {
     const fetchData = async () => {
       try {
         const data = await fetchWeatherForecast(city);
-        console.log(data);
+        // console.log(data);
         if (data) {
           const formattedWeatherData = data
             .slice(0, 5)
@@ -25,7 +25,7 @@ const HourlyForecast = ({ city }) => {
               weather,
             }));
           setForecastData(formattedWeatherData);
-          console.log(forecastData);
+          // console.log(forecastData);
         }
         setLoading(false);
       } catch (error) {
