@@ -1,0 +1,24 @@
+{
+  "cities": [
+    {
+      "id": 1809858,
+      "name": "Guangzhou"
+    },
+    {
+      "id": 1816670,
+      "name": "Beijing"
+    },
+    {
+      "id": 1796236,
+      "name": "Shanghai"
+    },
+    {
+      "id": 1795565,
+      "name": "Shenzhen"
+    },
+    {
+      "id": 1796989,
+      "name": "Changsha"
+    }
+  ]
+}
