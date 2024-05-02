@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Select, Flex } from "antd";
 import Home from "../Home/home";
@@ -6,14 +6,9 @@ import NotFoundPage from "../NotFoundPage";
 import data from "../../data/cities.json";
 const App = () => {
   const navigate = useNavigate();
-  const [city, setCity] = useState(localStorage.getItem("city") || "guangzhou");
 
-  useEffect(() => {
-    localStorage.setItem("city", city);
-  }, [city]);
   const handleCitySelect = (value) => {
     const data = value.toLowerCase();
-    setCity(data);
     navigate(data);
   };
 

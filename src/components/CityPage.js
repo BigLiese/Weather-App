@@ -77,7 +77,6 @@ const CityPage = ({ weatherDetails }) => {
       <div className="flex-around">
         <div className="flex-row">
           <UilSun className="small-icons" />
-
           <span className="font-small">
             Sunrise: {formatTimeFromTimestamp(weatherDetails.sys.sunrise)}
             AM
