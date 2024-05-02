@@ -1,16 +1,22 @@
 import React from "react";
 import "./CityPage.css";
+import { formatTimeFromTimestamp } from "../api/weatherService";
+import HourlyForecast from "../components/HourlyForecast";
 import cloudImage from "../assets/cloud.png";
 import clearImage from "../assets/clear.png";
 import rainImage from "../assets/rain.png";
 import drizzleImage from "../assets/drizzle.png";
-import windImage from "../assets/wind.png";
-import humidityImage from "../assets/humidity.png";
 
-// import WeatherChart from "./WeatherChart";
+import {
+  UilTemperature,
+  UilTear,
+  UilWind,
+  UilSun,
+  UilSunset,
+} from "@iconscout/react-unicons";
+
 const CityPage = ({ weatherDetails }) => {
   const mainWeather = weatherDetails.weather[0].main;
-
   let weatherImage;
 
   switch (mainWeather) {
@@ -38,27 +44,53 @@ const CityPage = ({ weatherDetails }) => {
           <img className="main-weather" src={weatherImage} alt="" />
         )}
         <div className="weather-temp">
-          {Math.floor(weatherDetails.main.temp)}°C
+          {`${weatherDetails.main.temp.toFixed(0)}`}°C
         </div>
         <div className="weather-location">{weatherDetails.name}</div>
-        <p>Description: {weatherDetails.weather[0].description}</p>
+        <p> {weatherDetails.weather[0].description}</p>
       </div>
-      <div className="flex-between">
+      <div className="flex-evenly">
         <div className="flex-row">
-          <img className="small-icons" src={windImage} alt="" />
+          <UilWind className="small-icons" />
           <div className="flex-column">
-            <span className="font-big"> {weatherDetails.wind.speed} m/s</span>
+            <span className="font-big">{weatherDetails.wind.speed} m/s</span>
             <span className="font-small">Wind</span>
           </div>
         </div>
         <div className="flex-row">
-          <img className="small-icons" src={humidityImage} alt="" />
+          <UilTemperature className="small-icons" />
+          <div className="flex-column">
+            <span className="font-big">
+              {`${weatherDetails.main.temp.toFixed(0)}`} °C
+            </span>
+            <span className="font-small">Feel like</span>
+          </div>
+        </div>
+        <div className="flex-row">
+          <UilTear className="small-icons" />
           <div className="flex-column">
             <span className="font-big">{weatherDetails.main.humidity} %</span>
             <span className="font-small">Humidity</span>
           </div>
         </div>
       </div>
+      <div className="flex-around">
+        <div className="flex-row">
+          <UilSun className="small-icons" />
+
+          <span className="font-small">
+            Sunrise: {formatTimeFromTimestamp(weatherDetails.sys.sunrise)}
+            AM
+          </span>
+        </div>
+        <div className="flex-row">
+          <UilSunset className="small-icons" />
+          <span className="font-small">
+            Sunset: {formatTimeFromTimestamp(weatherDetails.sys.sunset)} PM
+          </span>
+        </div>
+      </div>
+      <HourlyForecast city={weatherDetails.name} />
     </div>
   );
 };

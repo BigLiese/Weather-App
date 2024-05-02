@@ -8,7 +8,7 @@ const NotFoundPage = () => {
       <Flex vertical gap="middle" align="center">
         <h1>Ah, 404 Not Found!</h1>
         <Button danger>
-          <Link to="/">Go back to HomePage</Link>
+          <Link to="/guangzhou">Go back to HomePage</Link>
         </Button>
       </Flex>
     </div>
