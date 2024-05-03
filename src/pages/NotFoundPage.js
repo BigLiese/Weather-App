@@ -5,10 +5,17 @@ import "../index.css";
 const NotFoundPage = () => {
   return (
     <div>
-      <Flex vertical gap="middle" align="center">
-        <h1>Ah, 404 Not Found!</h1>
-        <Button danger>
-          <Link to="/guangzhou">Go back to HomePage</Link>
+      <Flex
+        vertical
+        justify="center"
+        gap="middle"
+        align="center"
+        className="not-found-content"
+      >
+        <h2>Sorry, this city data can't be found.</h2>
+        <h2>Please check cities through the selector!</h2>
+        <Button danger size="large">
+          <Link to="/">Go back to HomePage</Link>
         </Button>
       </Flex>
     </div>

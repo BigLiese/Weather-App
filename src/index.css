@@ -19,3 +19,12 @@ code {
 .select {
   margin-right: 6px;
 }
+
+.not-found-content {
+  height: 400px;
+}
+
+h2 {
+  height: 20px;
+  line-height: 20px;
+}
