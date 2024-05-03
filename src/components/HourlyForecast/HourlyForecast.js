@@ -1,10 +1,12 @@
 import React from "react";
-import { iconUrlFromCode } from "../api/weatherService";
+import { iconUrlFromCode } from "../../api/weatherService";
 import { Divider, Spin, ConfigProvider } from "antd";
-import "./CityPage.css";
-import { useFetchForecast } from "./../hooks/useFetachForecast";
+import "../CityPage/CityPage.css";
+import { useFetchForecast } from "../../hooks/useFetachForecast";
+import { useCityContext } from "../../hooks/useContext/context";
 
-const HourlyForecast = ({ city }) => {
+const HourlyForecast = () => {
+  const city = useCityContext();
   const { loading, forecastData } = useFetchForecast(city);
 
   if (loading) return <Spin size="large" />;

@@ -5,13 +5,12 @@ import NotFoundPage from "../pages/NotFoundPage";
 const routeConfig = (data) => {
   return (
     <Routes>
-      <Route path="/">
-        <Route index element={<Home city="guangzhou" />} />
+      <Route path="/" element={<Home />}>
         {data.cities.map((city) => (
           <Route
             key={city.name}
             path={city.name.toLowerCase()}
-            element={<Home city={city.name.toLowerCase()} />}
+            element={<Home />}
           />
         ))}
         <Route path="*" element={<NotFoundPage />} />

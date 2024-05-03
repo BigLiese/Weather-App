@@ -1,7 +1,7 @@
 import React from "react";
 import "./CityPage.css";
-import { formatTimeFromTimestamp } from "../api/weatherService";
-import { useDynamicImages } from "../hooks/useDynamicImages";
+import { formatTimeFromTimestamp } from "../../api/weatherService";
+import { useDynamicImages } from "../../hooks/useDynamicImages";
 
 const CityPage = ({ weatherDetails }) => {
   const mainWeather = weatherDetails.weather[0].main;
