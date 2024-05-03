@@ -1,11 +1,11 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import { Flex, Spin } from "antd";
 import { useFetchWeather } from "../../hooks/useFetchWeather";
 import CityPage from "../../components/CityPage";
 import Header from "../../components/Header";
 import "../../index.css";
 import NotFoundPage from "../NotFoundPage";
+import HourlyForecast from "../../components/HourlyForecast";
 
 const Home = ({ city }) => {
   const { loading, weatherDetails } = useFetchWeather(city);
@@ -17,10 +17,10 @@ const Home = ({ city }) => {
         {loading ? (
           <Spin size="large" />
         ) : weatherDetails ? (
-          <>
+          <div className="container">
             <CityPage weatherDetails={weatherDetails} />
-            <Outlet />
-          </>
+            <HourlyForecast city={weatherDetails.name} />
+          </div>
         ) : (
           <NotFoundPage />
         )}
