@@ -1,7 +1,7 @@
 import React from "react";
 import "./CityPage.css";
 import { formatTimeFromTimestamp } from "../api/weatherService";
-import HourlyForecast from "../components/HourlyForecast";
+import HourlyForecast from "./HourlyForecast";
 import cloudImage from "../assets/cloud.png";
 import clearImage from "../assets/clear.png";
 import rainImage from "../assets/rain.png";
