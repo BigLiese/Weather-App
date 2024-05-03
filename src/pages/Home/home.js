@@ -1,29 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 import { Flex, Spin } from "antd";
-import { fetchCurrentWeather } from "../../api/weatherService";
+import { useFetchWeather } from "../../hooks/useFetchWeather";
 import CityPage from "../../components/CityPage";
 import "../../index.css";
 import NotFoundPage from "./../NotFoundPage";
 
 const Home = ({ city }) => {
-  const [loading, setLoading] = useState(true);
-  const [weatherDetails, setWeatherDetails] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchCurrentWeather(city);
-        const { weather, main, wind, name, dt, sys } = data;
-        setWeatherDetails({ weather, main, wind, name, dt, sys });
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, [city]);
+  const { loading, weatherDetails } = useFetchWeather(city);
 
   return (
     <div>
