@@ -1,0 +1,41 @@
+[33mcommit 6bbe1fac34c6c58ec7f08cfb9dab983e1827ddf0[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: LieseLu <1300455270@qq.com>
+Date:   Fri May 3 15:20:41 2024 +0800
+
+    extract the selector into a component
+
+[33mcommit bebb601d0f8748239521c92eb5032e85c8f3fa4a[m
+Author: LieseLu <1300455270@qq.com>
+Date:   Fri May 3 15:15:31 2024 +0800
+
+    use custom hooks to keep code clean
+
+[33mcommit 8040ba642e6cec3ee4ed1da57f26cb7d2f1b0087[m
+Author: LieseLu <1300455270@qq.com>
+Date:   Thu May 2 20:05:31 2024 +0800
+
+    删除一些多余的console.log和没用的代码
+
+[33mcommit 6b37175170dce78612c1972e2925c64d3b9beecd[m
+Author: LieseLu <1300455270@qq.com>
+Date:   Thu May 2 19:33:59 2024 +0800
+
+    提取data到data文件夹，规范格式
+
+[33mcommit 8911be7c2d33c22a4d8fd686341977344d2e2711[m
+Author: LieseLu <1300455270@qq.com>
+Date:   Thu May 2 18:41:32 2024 +0800
+
+    convert px to rem
+
+[33mcommit 540cc6c33a4b6fba09a1c4db73ba79cb60fde776[m
+Author: LieseLu <1300455270@qq.com>
+Date:   Thu May 2 17:58:35 2024 +0800
+
+    final commit
+
+[33mcommit c88290e6d6dce56d9a8ceca16bce9a64624ceb99[m
+Author: LieseLu <1300455270@qq.com>
+Date:   Wed May 1 20:57:16 2024 +0800
+
+    first commit
