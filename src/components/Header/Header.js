@@ -10,9 +10,9 @@ const Header = () => {
   const [city, setCity] = useState("guangzhou");
 
   const handleCitySelect = (value) => {
-    const data = value.toLowerCase();
-    setCity(data);
-    navigate(data);
+    const selectedCity = value.toLowerCase();
+    setCity(selectedCity);
+    navigate(selectedCity);
   };
 
   return (

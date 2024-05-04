@@ -13,8 +13,8 @@ const routeConfig = (data) => {
             element={<Home />}
           />
         ))}
-        <Route path="*" element={<NotFoundPage />} />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };

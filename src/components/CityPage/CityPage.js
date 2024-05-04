@@ -32,7 +32,7 @@ const CityPage = ({ weatherDetails }) => {
             <span className="font-big">
               {`${weatherDetails.main.temp.toFixed(0)}`} °C
             </span>
-            <span className="font-small">Feel like</span>
+            <span className="font-small">Feels like</span>
           </div>
         </div>
         <div className="flex-row">

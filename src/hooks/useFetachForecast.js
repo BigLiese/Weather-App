@@ -1,7 +1,4 @@
-import {
-  fetchWeatherForecast,
-  formatTimeFromTimestamp,
-} from "../api/weatherService";
+import { fetchData, formatTimeFromTimestamp } from "../api/weatherService";
 import { useState, useEffect } from "react";
 
 export function useFetchForecast(city) {
@@ -9,12 +6,12 @@ export function useFetchForecast(city) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchForecastData = async () => {
       try {
-        const data = await fetchWeatherForecast(city);
-        // console.log(data);
+        const data = await fetchData(city, "forecast");
+        console.log(data);
         if (data) {
-          const formattedWeatherData = data
+          const formattedWeatherData = data.list
             .slice(0, 5)
             .map(({ dt, main, weather }) => ({
               dt: formatTimeFromTimestamp(dt),
@@ -22,7 +19,7 @@ export function useFetchForecast(city) {
               weather,
             }));
           setForecastData(formattedWeatherData);
-          // console.log(forecastData);
+          console.log(forecastData);
         }
         setLoading(false);
       } catch (error) {
@@ -30,7 +27,7 @@ export function useFetchForecast(city) {
         setLoading(false);
       }
     };
-    fetchData();
+    fetchForecastData();
   }, [city]);
 
   return { loading, forecastData };
