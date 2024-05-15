@@ -3,7 +3,6 @@
   height: 640px;
   margin: auto;
   border-radius: 12px;
-  background-image: linear-gradient(180deg, #130754 0%, #3b2f80 100%);
   color: white;
   display: flex;
   flex-direction: column;

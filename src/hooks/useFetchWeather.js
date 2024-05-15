@@ -12,7 +12,7 @@ export function useFetchWeather(city) {
         setWeatherDetails({ weather, main, wind, name, dt, sys });
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        console.error(error);
         setLoading(false);
       }
     };
